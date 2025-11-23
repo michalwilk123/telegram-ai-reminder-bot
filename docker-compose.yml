@@ -1,0 +1,30 @@
+services:
+  reminder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: reminder-app
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./data.db:/app/data.db # Persist SQLite database
+      - ./logs:/app/logs # Persist logs
+    environment:
+      # Environment variables from config_manager.py
+      - GOOGLE_OAUTH2_CLIENT_ID=${GOOGLE_OAUTH2_CLIENT_ID}
+      - GOOGLE_OAUTH2_SECRET=${GOOGLE_OAUTH2_SECRET}
+      - REDIRECT_URL=${REDIRECT_URL}
+      - SECRET_KEY=${SECRET_KEY}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - DATABASE_URL=${DATABASE_URL:-sqlite:///app/data.db}
+      - DEBUG=${DEBUG:-false}
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    networks:
+      - reminder-network
+
+networks:
+  reminder-network:
+    driver: bridge
+

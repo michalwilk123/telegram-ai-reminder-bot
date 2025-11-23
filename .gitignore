@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+*.egg-info/
+
+# Bot data
+reminders.json
+scheduler.db
+
+# Environment
+.env
+
+# Logs (may contain sensitive information)
+logs/
+*.log
+
+# Database files
+data.db
+*.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
