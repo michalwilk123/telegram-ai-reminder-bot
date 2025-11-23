@@ -5,12 +5,12 @@ from zoneinfo import ZoneInfo
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import ContextTypes
 
-from core import user_tokens
 from managers.agent_manager import AgentManager
 from managers.config_manager import config_manager
 from managers.google_services_manager import GoogleServicesManager
 from managers.schedule_manager import ScheduleManager
 from managers.storage_manager import StorageManager
+from ui.telegram import user_tokens
 from ui.telegram.validator import (
     parse_add_command_args,
     parse_reminder_add_args,

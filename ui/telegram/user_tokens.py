@@ -1,3 +1,5 @@
+"""User token management for Telegram bot."""
+
 from time import time
 from typing import Any
 
@@ -17,6 +19,7 @@ async def save_user_token(
     if 'refresh_token' not in token_data:
         # Log warning without exposing token data
         import sys
+
         print('[WARNING] Saving token WITHOUT refresh_token!', file=sys.stderr)
     await storage_manager.save_user_token(user_id, token_data)
 
@@ -195,3 +198,4 @@ async def delete_user_token(
         logger(f'No token found to delete for user {user_id}', 'warning')
 
     return success
+
