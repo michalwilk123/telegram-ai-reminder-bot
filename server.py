@@ -94,7 +94,13 @@ def build_app(verbose: bool):
 
 def start():
     app = build_app(verbose=True)
-    uvicorn.run(app, host='localhost', port=9000, proxy_headers=True, forwarded_allow_ips='*')
+    uvicorn.run(
+        app,
+        host=config_manager.server_host,
+        port=config_manager.server_port,
+        proxy_headers=True,
+        forwarded_allow_ips='*',
+    )
 
 
 if __name__ == '__main__':

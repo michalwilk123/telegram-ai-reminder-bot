@@ -13,7 +13,6 @@ dependencies = [
     "google-auth>=2.43.0",
     "httpx>=0.28.1",
     "itsdangerous>=2.2.0",
-    "marimo>=0.17.8",
     "pydantic>=2.12.4",
     "pydantic-ai-slim[google]>=1.18.0",
     "pydantic-settings>=2.12.0",

@@ -22,6 +22,6 @@ RUN mkdir -p /data /app/logs && \
 # Expose port 9000 (as per server.py)
 EXPOSE 9000
 
-# Run the server using uv
-CMD ["uv", "run", "main.py", "run"]
+# Run the server using uv, bypassing dev dependencies
+CMD ["uv", "run", "--no-dev", "server.py"]
 

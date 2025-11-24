@@ -10,6 +10,8 @@ class ConfigManager(BaseSettings):
     google_api_key: str
     database_url: str
     debug: bool
+    server_host: str = '0.0.0.0'
+    server_port: int = 9000
 
     model_config = SettingsConfigDict(env_file='.env', env_file_encoding='utf-8', extra='ignore')
 
