@@ -16,12 +16,6 @@ RUN uv sync --frozen --no-dev
 # Copy the rest of the application
 COPY . .
 
-# Create logs directory
-RUN mkdir -p /app/logs
-
-# Create data.db if it doesn't exist (SQLite database)
-RUN touch /app/data.db
-
 # Expose port 9000 (as per server.py)
 EXPOSE 9000
 
