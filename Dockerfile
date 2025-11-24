@@ -16,6 +16,9 @@ RUN uv sync --frozen --no-dev
 # Copy the rest of the application
 COPY . .
 
+RUN mkdir -p /data /app/logs && \
+    chmod 755 /data /app/logs
+
 # Expose port 9000 (as per server.py)
 EXPOSE 9000
 
