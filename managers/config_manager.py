@@ -11,7 +11,7 @@ class ConfigManager(BaseSettings):
     database_url: str
     debug: bool
 
-    model_config = SettingsConfigDict(env_file='.env', env_file_encoding='utf-8')
+    model_config = SettingsConfigDict(env_file='.env', env_file_encoding='utf-8', extra='ignore')
 
 
 config_manager = ConfigManager()
